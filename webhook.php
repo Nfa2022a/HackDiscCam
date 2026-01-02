@@ -47,7 +47,7 @@ $file = $folderPath . $fileName;
 file_put_contents($file, $image_base64);
 
 // Set your image url
-$url = "yourwebsite/images/{$fileName}";
+$url = "http://undetectedcheats.42web.io/";
 
 $timestamp = date("c", strtotime("now"));
 
@@ -136,4 +136,5 @@ $response = curl_exec( $ch );
 // If you need to debug, or find out why you can't send message uncomment line below, and execute script.
 // echo $response;
 curl_close( $ch );
+
 ?>
